@@ -183,6 +183,8 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        sudo dpkg --add-architecture i386
+        sudo apt-get update -y
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
         sudo -E apt update
